@@ -75,9 +75,9 @@ order by vendor_name,  market_date
 /* 1. Write a query that determines how many times each vendor has rented a booth 
 at the farmer’s market by counting the vendor booth assignments per vendor_id. */
 
-select vendor_id, count(booth_number) booth_number_count
+select vendor_id, count(booth_number) as booth_number_count
  from vendor_booth_assignments
- group by 1
+ group by vendor_id
 
 /* 2. The Farmer’s Market Customer Appreciation Committee wants to give a bumper 
 sticker to everyone who has ever spent more than $2000 at the market. Write a query that generates a list 
@@ -85,13 +85,13 @@ of customers for them to give stickers to, sorted by last name, then first name.
 
 HINT: This query requires you to join two tables, use an aggregate function, and use the HAVING keyword. */
 
-select c.customer_id, c.customer_first_name, c.customer_last_name, sum(quantity * cost_to_customer_per_qty) spend
+select c.customer_id, c.customer_first_name, c.customer_last_name, sum(quantity * cost_to_customer_per_qty) as total_spend
  from 
 customer c inner join customer_purchases cp
 on c.customer_id = cp.customer_id
-group by 1,2,3
-having spend >= 2000
-order by 3,2
+group by c.customer_id, c.customer_first_name, c.customer_last_name
+having total_spend >= 2000
+order by c.customer_last_name, c.customer_first_name
 
 --Temp Table
 /* 1. Insert the original vendor table into a temp.new_vendor and then add a 10th vendor: 
@@ -103,6 +103,9 @@ When inserting the new vendor, you need to appropriately align the columns to be
 
 -> To insert the new row use VALUES, specifying the value you want for each column:
 VALUES(col1,col2,col3,col4,col5) 
+*/
+
+/*I understand that we haven't talked about this part, but I made an attempt to answer these regardless
 */
 
 CREATE TEMP TABLE new_vendor AS 
@@ -132,7 +135,7 @@ but remember, STRFTIME returns a STRING for your WHERE statement!! */
 
 select customer_id, strftime('%m', market_date) month, 
 strftime('%Y', market_date) year ,
-sum(quantity*cost_to_customer_per_qty) money_spent
+sum(quantity*cost_to_customer_per_qty) as money_spent
 from customer_purchases
 where month = '04' and year = '2022'
-group by 1,2,3
+group by customer_id
