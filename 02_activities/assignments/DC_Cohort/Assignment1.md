@@ -14,10 +14,10 @@
     * Open a private window in your browser. Copy and paste the link to your pull request into the address bar. Make sure you can see your pull request properly. This helps the technical facilitator and learning support staff review your submission easily.
 
 Checklist:
-- [ ] Create a branch called `assignment-one`.
-- [ ] Ensure that the repository is public.
-- [ ] Review [the PR description guidelines](https://github.com/UofT-DSI/onboarding/blob/main/onboarding_documents/submissions.md#guidelines-for-pull-request-descriptions) and adhere to them.
-- [ ] Verify that the link is accessible in a private browser window.
+- [x ] Create a branch called `assignment-one`.
+- [ x] Ensure that the repository is public.
+- [ x] Review [the PR description guidelines](https://github.com/UofT-DSI/onboarding/blob/main/onboarding_documents/submissions.md#guidelines-for-pull-request-descriptions) and adhere to them.
+- [x ] Verify that the link is accessible in a private browser window.
 
 If you encounter any difficulties or have questions, please don't hesitate to reach out to our team via our Slack. Our Technical Facilitators and Learning Support staff are here to help you navigate any challenges.
 
@@ -209,5 +209,10 @@ Consider, for example, concepts of fariness, inequality, social structures, marg
 
 
 ```
-Your thoughts...
+The example mentioned in the article really resonated with me: "If designers believe most children in Pakistan should only be born within a marriage between a man and a woman, they might choose to avoid writing additional code that would allow an unmarried, single woman’s record to be linked to a child’s." 
+
+This reminds me of the COVID period, when China enforced a health QR code system on WeChat, which is similar to WhatsApp in China. People’s testing results were linked to their WeChat accounts. Once they tested negative, a green QR code would appear, and people needed that green code to go out, use public transportation, and access public spaces. This design assumed that everyone used WeChat, but it was heavily biased against elderly people. My grandmother doesn’t know how to use a smartphone or WeChat, so it was very difficult for her to go out or use public transportation because she couldn’t prove she was healthy. On one hand, I understand the benefits of such a system in a country with a large population. On the other hand, people who already receive less attention become even more marginalized. This is a common issue, but it can be worse in countries with collectivist cultures, where people expect conformity to the majority and believe inconveniencing the minority is acceptable. 
+
+Obviously, this is a complex issue, but I think it can be minimized through more community-based research. It’s hard for designers to anticipate all the possible idiosyncratic cases when they lack lived experience. However, if people in the community can participate in the design process, or if designers consult with them, the resulting data systems are more likely to be inclusive.
+
 ```
