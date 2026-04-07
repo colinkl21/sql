@@ -24,7 +24,12 @@ All the other rows will remain the same. */
 --QUERY 1
 
 
-
+SELECT 
+    COALESCE(
+        product_name || ', ' || product_size || ' (' || product_qty_type || ')', 
+        ''
+    ) AS product_details_no_null
+FROM product;
 
 --END QUERY
 
@@ -42,6 +47,13 @@ Filter the visits to dates before April 29, 2022. */
 --QUERY 2
 
 
+SELECT 
+    customer_id, 
+    market_date, 
+    ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY market_date) AS visit_number
+FROM customer_purchases
+where market_date < "2022-04-29"
+
 
 
 --END QUERY
@@ -53,7 +65,17 @@ only the customer’s most recent visit.
 HINT: Do not use the previous visit dates filter. */
 --QUERY 3
 
-
+SELECT 
+    customer_id, 
+    market_date
+FROM (
+    SELECT 
+        customer_id, 
+        market_date, 
+        ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY market_date DESC) AS visit_number
+    FROM customer_purchases
+) AS RankedVisits
+WHERE visit_number = 1;
 
 
 --END QUERY
@@ -65,6 +87,17 @@ customer_purchases table that indicates how many different times that customer h
 You can make this a running count by including an ORDER BY within the PARTITION BY if desired.
 Filter the visits to dates before April 29, 2022. */
 --QUERY 4
+
+SELECT 
+    customer_id, 
+    market_date, 
+    product_id, 
+    COUNT(product_id) OVER (
+        PARTITION BY customer_id, product_id 
+        ORDER BY market_date
+    ) AS product_purchase_count
+FROM customer_purchases
+where market_date < "2022-04-29"
 
 
 
