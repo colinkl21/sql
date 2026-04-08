@@ -14,10 +14,10 @@
     * Open a private window in your browser. Copy and paste the link to your pull request into the address bar. Make sure you can see your pull request properly. This helps the technical facilitator and learning support staff review your submission easily.
 
 Checklist:
-- [ ] Create a branch called `assignment-two`.
-- [ ] Ensure that the repository is public.
-- [ ] Review [the PR description guidelines](https://github.com/UofT-DSI/onboarding/blob/main/onboarding_documents/submissions.md#guidelines-for-pull-request-descriptions) and adhere to them.
-- [ ] Verify that the link is accessible in a private browser window.
+- [ x] Create a branch called `assignment-two`.
+- [ x] Ensure that the repository is public.
+- [ x] Review [the PR description guidelines](https://github.com/UofT-DSI/onboarding/blob/main/onboarding_documents/submissions.md#guidelines-for-pull-request-descriptions) and adhere to them.
+- [ x] Verify that the link is accessible in a private browser window.
 
 If you encounter any difficulties or have questions, please don't hesitate to reach out to our team via our Slack. Our Technical Facilitators and Learning Support staff are here to help you navigate any challenges.
 
@@ -57,6 +57,8 @@ The store wants to keep customer addresses. Propose two architectures for the CU
 
 ```
 Your answer...
+type 1: overwrite the exisiting address and the old address will be replaced by the new address.
+type 2: write each new address as a new row, and the old address is still retained. 
 ```
 
 ***
@@ -192,4 +194,7 @@ Consider, for example, concepts of labour, bias, LLM proliferation, moderating c
 
 ```
 Your thoughts...
+First of all, I was equally surprised to learn that clothes are made by humans rather than machines. Second, I found the training process of machine learning fascinating, as it reminded me of my previous experience as a research assistant. When I was an undergraduate, I participated in a research project aimed at training AI to recognize empathy in human expressions. Our task was to watch a TV show and identify scenes in which empathy was displayed on human faces. This was very challenging, because even among humans there is often no consensus on whether a scene reflects empathy or some other emotion. Looking back on this experience, what I initially perceived as disagreement or variation may actually reflect the complexity of reality. For example, different people can have different interpretations of what empathy is. Empathy is a construct that varies by cultural background, context, and situation. While current technology may be mature enough for AI to recognize objects, it may still lack the complexity required to fully understand human emotions.
+
+This also leads me to think about coder bias. Even if this project were to proceed smoothly, how generalizable would this technology actually be? The training materials and the coders involved are primarily Western. It would therefore be bold to assume that this technology is applicable across different human populations when the development team is largely Western and the perspectives represented are limited. All of this highlights the importance of conducting cross‑cultural research and including people from diverse backgrounds on the same team.
 ```
